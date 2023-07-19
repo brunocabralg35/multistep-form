@@ -1,0 +1,15 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  
+    & input {
+      padding: 15px 20px;
+      border: 1px solid hsl(0, 0%, 69%);
+      border-radius: 5px;
+    }
+  
+    & label {
+      color: hsl(213, 96%, 18%);
+    }
+  }
