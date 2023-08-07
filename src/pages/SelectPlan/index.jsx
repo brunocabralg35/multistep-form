@@ -6,9 +6,12 @@ import Arcade from "../../assets/images/icon-arcade.svg";
 import Pro from "../../assets/images/icon-pro.svg";
 import Advanced from "../../assets/images/icon-advanced.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SelectPlan() {
   const [planMethod, setPlanMethod] = useState("monthly");
+
+  const navigate = useNavigate();
 
   const planValues = {
     monthly: {
@@ -120,7 +123,7 @@ export default function SelectPlan() {
 
         <Footer>
           <Button text="Go back" type="back" />
-          <Button text="Next Step" />
+          <Button text="Next Step" caminho="/addOns"/>
         </Footer>
       </Box>
     </div>

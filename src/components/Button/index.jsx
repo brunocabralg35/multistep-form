@@ -8,6 +8,8 @@ function Button(props) {
   function handleClick() {
     if (props.type === "back") {
       navigate(-1);
+    } else {
+      navigate(props.caminho);
     }
   }
 

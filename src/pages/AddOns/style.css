@@ -1,0 +1,87 @@
+.addOns {
+  display: flex;
+  justify-content: center;
+
+  & p {
+    color: hsl(0, 0%, 69%);
+  }
+
+  & .options {
+    display: flex;
+
+    & .input-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: center;
+      border: 1px solid hsl(0, 0%, 69%);
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      & input[type="checkbox"] {
+        display: none;
+      }
+
+      & input[type="checkbox"]:checked ~ .checkbox {
+        background-color: rgb(58, 43, 226);
+        border: none;
+
+        & svg {
+          visibility: visible;
+        }
+      }
+
+      & .checkbox {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background-color: transparent;
+        border: 1px solid hsl(0, 0%, 69%);
+        align-self: center;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & svg {
+          visibility: hidden;
+        }
+      }
+
+      & .price {
+        font-size: 18px;
+        color: rgb(58, 43, 226);
+      }
+
+      & .contentDiv,
+      .priceDiv {
+        display: flex;
+        gap: 25px;
+      }
+
+      & .input-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        & h1 {
+          font-size: 20px;
+          font-weight: 500;
+          color: hsl(213, 96%, 18%);
+        }
+
+        & p {
+          font-size: 16px;
+          color: hsl(0, 0%, 69%);
+        }
+      }
+    }
+  }
+}
