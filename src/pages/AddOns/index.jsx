@@ -1,17 +1,45 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Check } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Box from "../../components/Box";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import "./style.css";
+import FormContext from "../../context/FormContext";
+import { useNavigate } from "react-router-dom";
 
 export default function AddOns() {
   const [onlineChecked, setOnlineChecked] = useState(false);
   const [largerChecked, setLargerChecked] = useState(false);
   const [customChecked, setCustomChecked] = useState(false);
 
+  const { setCurrentPage, register } = useContext(FormContext);
+
+  useEffect(() => setCurrentPage(2), []);
+
+  const [addons, setAddons] = useState([
+    { service: "Online service", checked: onlineChecked },
+    { service: "Larger storage", checked: largerChecked },
+    { service: "Customizable profile", checked: customChecked },
+  ]);
+
+  useEffect(() => {
+    setAddons([
+      { service: "Online service", checked: onlineChecked },
+      { service: "Larger storage", checked: largerChecked },
+      { service: "Customizable profile", checked: customChecked },
+    ]);
+  }, [onlineChecked, largerChecked, customChecked]);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!register.name) navigate("/");
+    console.log(register);
+  }, []);
+
   const plan = {
-    method: "monthly",
+    method: register.planMethod,
   };
 
   return (
@@ -117,7 +145,12 @@ export default function AddOns() {
 
         <Footer>
           <Button text="Go back" type="back" />
-          <Button text="Next Step" caminho="/summary" />
+          <Button
+            text="Next Step"
+            type="addons"
+            addons={addons}
+            caminho="/summary"
+          />
         </Footer>
       </Box>
     </div>

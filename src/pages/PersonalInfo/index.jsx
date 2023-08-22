@@ -8,8 +8,14 @@ import ErrorInput from "../../components/ErrorInput";
 import Box from "../../components/Box";
 
 import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import FormContext from "../../context/FormContext";
 
 export default function PersonalInfo() {
+  const { setCurrentPage, setRegister } = useContext(FormContext);
+
+  useEffect(() => setCurrentPage(0), []);
+
   const {
     register,
     handleSubmit,
@@ -19,7 +25,7 @@ export default function PersonalInfo() {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
+    setRegister(data);
     navigate("/selectPlan");
   };
 

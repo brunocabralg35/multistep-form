@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Box from "../../components/Box";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
@@ -5,13 +6,26 @@ import "./style.css";
 import Arcade from "../../assets/images/icon-arcade.svg";
 import Pro from "../../assets/images/icon-pro.svg";
 import Advanced from "../../assets/images/icon-advanced.svg";
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import FormContext from "../../context/FormContext";
 
 export default function SelectPlan() {
   const [planMethod, setPlanMethod] = useState("monthly");
+  const [plan, setPlan] = useState("arcade");
+
+  const { setCurrentPage, register } = useContext(FormContext);
+
+  useEffect(() => setCurrentPage(1), []);
+
+  useEffect(() => console.log(plan), [plan]);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!register.name) navigate("/");
+    console.log(register);
+  }, []);
 
   const planValues = {
     monthly: {
@@ -41,7 +55,7 @@ export default function SelectPlan() {
               value="arcade"
               defaultChecked={true}
             />
-            <label htmlFor="arcade">
+            <label htmlFor="arcade" onClick={() => setPlan("arcade")}>
               <img src={Arcade} alt="" />
               <div className="content">
                 <h1>Arcade</h1>
@@ -60,8 +74,12 @@ export default function SelectPlan() {
               id="advanced"
               name="plan-option"
               value="advanced"
+              onClick={() => {
+                setPlan("advanced");
+                console.log(plan);
+              }}
             />
-            <label htmlFor="advanced">
+            <label htmlFor="advanced" onClick={() => setPlan("advanced")}>
               <img src={Advanced} alt="" />
               <div className="content">
                 <h1>Advanced</h1>
@@ -75,8 +93,17 @@ export default function SelectPlan() {
             </label>
           </div>
           <div className="input-option">
-            <input type="radio" id="pro" name="plan-option" value="pro" />
-            <label htmlFor="pro">
+            <input
+              type="radio"
+              id="pro"
+              name="plan-option"
+              value="pro"
+              onClick={() => {
+                setPlan("pro");
+                console.log(plan);
+              }}
+            />
+            <label htmlFor="pro" onClick={() => setPlan("pro")}>
               <img src={Pro} alt="" />
               <div className="content">
                 <h1>Pro</h1>
@@ -123,7 +150,13 @@ export default function SelectPlan() {
 
         <Footer>
           <Button text="Go back" type="back" />
-          <Button text="Next Step" caminho="/addOns"/>
+          <Button
+            text="Next Step"
+            type="plan"
+            caminho="/addOns"
+            plan={plan}
+            planMethod={planMethod}
+          />
         </Footer>
       </Box>
     </div>
