@@ -1,6 +1,7 @@
 .addOns {
   display: flex;
   justify-content: center;
+  width: 100%;
 
   & p {
     color: hsl(0, 0%, 69%);

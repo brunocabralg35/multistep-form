@@ -18,13 +18,10 @@ export default function SelectPlan() {
 
   useEffect(() => setCurrentPage(1), []);
 
-  useEffect(() => console.log(plan), [plan]);
-
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!register.name) navigate("/");
-    console.log(register);
   }, []);
 
   const planValues = {
@@ -76,7 +73,6 @@ export default function SelectPlan() {
               value="advanced"
               onClick={() => {
                 setPlan("advanced");
-                console.log(plan);
               }}
             />
             <label htmlFor="advanced" onClick={() => setPlan("advanced")}>
@@ -100,7 +96,6 @@ export default function SelectPlan() {
               value="pro"
               onClick={() => {
                 setPlan("pro");
-                console.log(plan);
               }}
             />
             <label htmlFor="pro" onClick={() => setPlan("pro")}>

@@ -10,15 +10,34 @@
   .link {
     color: hsl(0, 0%, 69%);
   }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9375rem;
+    padding: 3.75rem 0.3125rem;
+    text-align: center;
+
+    & img {
+      width: 70px;
+      margin-bottom: 0.9375rem;
+    }
+
+    & h1 {
+      color: hsl(213, 96%, 18%);
+    }
+  }
 }
 
 .choices {
   background-color: hsl(217, 100%, 97%);
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
 
   & h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: hsl(213, 96%, 18%);
   }
 
@@ -26,16 +45,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid hsla(0, 0%, 69%, 0.273);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    border-bottom: 0.0625rem solid hsla(0, 0%, 69%, 0.273);
+    padding-bottom: 0.9375rem;
+    margin-bottom: 1.25rem;
 
     & .plan-type {
       display: flex;
       flex-direction: column;
-      gap: 0.1875rem;
+      gap: 3px;
 
-      & h3{
+      & h3 {
         text-transform: capitalize;
       }
     }
@@ -44,7 +63,7 @@
   & .addons {
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 10px;
 
     & .addItem {
       display: flex;
@@ -59,9 +78,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   & h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: rgb(58, 43, 226);
   }
 }

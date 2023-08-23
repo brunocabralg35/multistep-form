@@ -30,6 +30,10 @@ function Button(props) {
     if (props.type === "back") {
       navigate(-1);
     }
+
+    if (props.type === "confirm") {
+      props.onClick();
+    }
   }
 
   return (

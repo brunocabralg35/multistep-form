@@ -9,20 +9,21 @@ export function FormProvider({ children }) {
 
   const planValues = {
     monthly: {
-      arcade: { name: "arcade", price: 9 },
-      advanced: { name: "advanced", price: 12 },
-      pro: { name: "pro", price: 15 },
+      arcade: { name: "Arcade", price: 9 },
+      advanced: { name: "Advanced", price: 12 },
+      pro: { name: "Pro", price: 15 },
     },
     yearly: {
-      arcade: { name: "arcade", price: 90 },
-      advanced: { name: "advanced", price: 120 },
-      pro: { name: "pro", price: 150 },
+      arcade: { name: "Arcade", price: 90 },
+      advanced: { name: "Advanced", price: 120 },
+      pro: { name: "Pro", price: 150 },
     },
   };
 
+
   return (
     <FormContext.Provider
-      value={{ planValues, register, setRegister, currentPage, setCurrentPage }}
+      value={{ register, setRegister, currentPage, setCurrentPage, planValues }}
     >
       {children}
     </FormContext.Provider>

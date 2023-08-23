@@ -17,17 +17,20 @@ export default function AddOns() {
 
   useEffect(() => setCurrentPage(2), []);
 
-  const [addons, setAddons] = useState([
-    { service: "Online service", checked: onlineChecked },
-    { service: "Larger storage", checked: largerChecked },
-    { service: "Customizable profile", checked: customChecked },
-  ]);
+  const [addons, setAddons] = useState([]);
 
   useEffect(() => {
+    let price = 0;
+    if (register.planMethod == "monthly") price = 2;
+    if (register.planMethod == "yearly") price = 20;
     setAddons([
-      { service: "Online service", checked: onlineChecked },
-      { service: "Larger storage", checked: largerChecked },
-      { service: "Customizable profile", checked: customChecked },
+      { service: "Online service", checked: onlineChecked, price: price / 2 },
+      { service: "Larger storage", checked: largerChecked, price: price },
+      {
+        service: "Customizable profile",
+        checked: customChecked,
+        price: price / 2,
+      },
     ]);
   }, [onlineChecked, largerChecked, customChecked]);
 
@@ -35,7 +38,6 @@ export default function AddOns() {
 
   useEffect(() => {
     if (!register.name) navigate("/");
-    console.log(register);
   }, []);
 
   const plan = {
