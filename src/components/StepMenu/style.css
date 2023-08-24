@@ -18,10 +18,21 @@
   & .steps {
     display: flex;
     gap: 20px;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     position: relative;
     top: -50px;
+
+    & .step-content {
+      display: flex;
+      z-index: 2;
+      gap: 15px;
+      color: white;
+
+      & .step-text {
+        display: none;
+      }
+    }
 
     & .step {
       display: flex;
@@ -43,6 +54,60 @@
       background-color: hsl(206, 94%, 87%);
       border: none;
       color: black;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .stepMenu {
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: transparent;
+
+    .steps {
+      height: 100%;
+      width: 100%;
+      margin-left: 100px;
+      justify-content: start;
+      top: 0;
+
+      margin-top: 60px;
+
+      & .step-content {
+        display: flex;
+        z-index: 2;
+        gap: 15px;
+        color: white;
+
+        & .step-text {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+      }
+
+      & .step {
+        height: 35px;
+        width: 35px;
+        font-size: 14px;
+      }
+    }
+
+    & img {
+      z-index: 1;
+      border-radius: 10px;
+      object-fit: cover;
+      width: 92%;
+      height: 95%;
+      margin-top: 5%;
+    }
+
+    & .steps {
+      flex-direction: column;
     }
   }
 }

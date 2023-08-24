@@ -1,14 +1,25 @@
 .summary {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: hsl(231, 11%, 63%);
 
   & h2 {
     z-index: 10;
   }
 
-  & p,
-  .link {
+  & p{
     color: hsl(0, 0%, 69%);
+  }
+
+  & .link{
+    color: hsl(0, 0%, 69%);
+    transition: all .3s ease;
+    &:hover{
+      color: hsl(243, 100%, 62%);
+    }
   }
 
   .content {
@@ -84,3 +95,11 @@
     color: rgb(58, 43, 226);
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .summary {
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+

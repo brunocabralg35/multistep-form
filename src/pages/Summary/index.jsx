@@ -82,6 +82,14 @@ export default function Summary() {
               +${prices.total}/{register.planMethod == "yearly" ? "yr" : "mo"}
             </h3>
           </div>
+          <Footer>
+          <Button text="Go back" type="back" />
+          <Button
+            text="Confirm"
+            type="confirm"
+            onClick={() => setConfirm(!confirm)}
+          />
+        </Footer>
         </Box>
       ) : (
         <Box>
@@ -95,17 +103,6 @@ export default function Summary() {
             </p>
           </div>
         </Box>
-      )}
-
-      {!confirm && (
-        <Footer>
-          <Button text="Go back" type="back" />
-          <Button
-            text="Confirm"
-            type="confirm"
-            onClick={() => setConfirm(!confirm)}
-          />
-        </Footer>
       )}
     </div>
   );

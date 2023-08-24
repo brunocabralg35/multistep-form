@@ -13,3 +13,12 @@
       color: hsl(213, 96%, 18%);
     }
   }
+
+  @media screen and (min-width: 1000px) {
+    .input {
+      & input{
+        padding: 18px;
+        border-radius: 10px;
+      }
+    }
+}

@@ -8,8 +8,10 @@ function App() {
     <div className="App">
       <FormProvider>
         <BrowserRouter>
-          <StepMenu />
-          <Rotas />
+          <div className="container">
+            <StepMenu />
+            <Rotas />
+          </div>
         </BrowserRouter>
       </FormProvider>
     </div>

@@ -14,8 +14,8 @@
 
   & .input-option {
     display: flex;
-    
-    & input{
+
+    & input {
       display: none;
     }
 
@@ -105,5 +105,12 @@
       border-radius: 50%;
       transition: all 0.3s ease;
     }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .selectPlan {
+    justify-content: center;
+    align-items: flex-start;
   }
 }

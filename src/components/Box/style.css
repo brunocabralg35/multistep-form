@@ -1,21 +1,43 @@
 .box {
-    display: flex;
-    margin-top: -90px;
-    flex-direction: column;
-    gap: 20px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 40px 30px;
-    width: calc(100% - 50px);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  
+  display: flex;
+  margin-top: -90px;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 30px;
+  width: calc(100% - 50px);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  & h2 {
+    color: hsl(213, 96%, 18%);
+    font-size: 36px;
+  }
+
+  & p {
+    line-height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .box {
+    margin: 0;
+    height: 100%;
+    width: 90%;
+    box-shadow: none;
+    background-color: transparent;
+    align-self: center;
+
     & h2 {
       color: hsl(213, 96%, 18%);
-      font-size: 36px;
+      font-size: 30px;
     }
-  
+
     & p {
+      margin-top: -10px;
       line-height: 30px;
-      font-size: 20px;
+      font-size: 18px;
     }
   }
+}

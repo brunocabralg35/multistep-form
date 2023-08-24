@@ -12,3 +12,10 @@ form {
   flex-direction: column;
   gap: 20px;
 }
+
+@media screen and (min-width: 1000px) {
+  .personal {
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
