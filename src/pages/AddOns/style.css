@@ -94,5 +94,11 @@
   .addOns {
     justify-content: center;
     align-items: flex-start;
+
+    & .options {
+      & .input-wrapper {
+        padding: 25px 25px;
+      }
+    }
   }
 }

@@ -28,6 +28,7 @@
     box-shadow: none;
     background-color: transparent;
     align-self: center;
+    position: relative;
 
     & h2 {
       color: hsl(213, 96%, 18%);

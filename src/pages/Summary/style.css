@@ -10,14 +10,14 @@
     z-index: 10;
   }
 
-  & p{
+  & p {
     color: hsl(0, 0%, 69%);
   }
 
-  & .link{
+  & .link {
     color: hsl(0, 0%, 69%);
-    transition: all .3s ease;
-    &:hover{
+    transition: all 0.3s ease;
+    &:hover {
       color: hsl(243, 100%, 62%);
     }
   }
@@ -30,6 +30,7 @@
     gap: 0.9375rem;
     padding: 3.75rem 0.3125rem;
     text-align: center;
+    height: 100%;
 
     & img {
       width: 70px;
@@ -102,4 +103,3 @@
     align-items: flex-start;
   }
 }
-

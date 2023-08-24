@@ -5,6 +5,12 @@
   width: 100%;
   height: 100%;
   color: hsl(231, 11%, 63%);
+
+ & .wrapper-error{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+ }
 }
 
 form {
@@ -17,5 +23,11 @@ form {
   .personal {
     justify-content: center;
     align-items: flex-start;
+
+    & .wrapper-error{
+      display: flex;
+      flex-direction: column-reverse;
+      position: relative;
+     }
   }
 }

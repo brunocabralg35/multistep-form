@@ -37,32 +37,38 @@ export default function PersonalInfo() {
         <p>Please provide your name, email, address, and phone number.</p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <InputWrapper labelFor="name" label="Name">
-            <input
-              type="text"
-              placeholder="e.g Stephen King"
-              {...register("name", { required: true })}
-            />
-          </InputWrapper>
-          {errors.name && <ErrorInput field="Name" />}
+          <div className="wrapper-error">
+            <InputWrapper labelFor="name" label="Name">
+              <input
+                type="text"
+                placeholder="e.g Stephen King"
+                {...register("name", { required: true })}
+              />
+            </InputWrapper>
+            {errors.name && <ErrorInput field="Name" />}
+          </div>
 
-          <InputWrapper labelFor="email" label="Email Address">
-            <input
-              type="email"
-              placeholder="e.g. stephenking@lorem.com"
-              {...register("email", { required: true })}
-            />
-          </InputWrapper>
-          {errors.email && <ErrorInput field="Email" />}
+          <div className="wrapper-error">
+            <InputWrapper labelFor="email" label="Email Address">
+              <input
+                type="email"
+                placeholder="e.g. stephenking@lorem.com"
+                {...register("email", { required: true })}
+              />
+            </InputWrapper>
+            {errors.email && <ErrorInput field="Email" />}
+          </div>
 
-          <InputWrapper labelFor="phone" label="Phone Number">
-            <input
-              type="tel"
-              placeholder="e.g. +1 234 567 890"
-              {...register("phone", { required: true })}
-            />
-          </InputWrapper>
-          {errors.phone && <ErrorInput field="Phone" />}
+          <div className="wrapper-error">
+            <InputWrapper labelFor="phone" label="Phone Number">
+              <input
+                type="tel"
+                placeholder="e.g. +1 234 567 890"
+                {...register("phone", { required: true })}
+              />
+            </InputWrapper>
+            {errors.phone && <ErrorInput field="Phone" />}
+          </div>
 
           <Footer>
             <Button text="Next Step" />
