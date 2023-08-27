@@ -102,3 +102,28 @@
     }
   }
 }
+
+@media screen and (max-height: 800px) {
+  .addOns {
+    & .input-wrapper {
+      justify-content: flex-start !important;
+      padding: 15px 10px !important;
+      align-items: center !important;
+      gap: 0 !important;
+
+      & .contentDiv {
+        gap: 10px !important;
+        justify-content: space-between !important;
+
+        & .input-content {
+          width: 80%;
+        }
+      }
+
+      & p {
+        margin: 0;
+        width: 90% !important;
+      }
+    }
+  }
+}
